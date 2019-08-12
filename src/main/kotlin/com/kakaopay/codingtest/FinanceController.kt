@@ -27,4 +27,9 @@ class FinanceController(
     fun allFinanceInfoByYear(): AllFinanceInfoByYear {
         return service.getAllFinanceInfoByYear()
     }
+
+    @GetMapping("mandatory/finance/most-for-all-years")
+    fun mostFinanceForAllYears(): MostFinanceForAllYears {
+        return service.getMostFinanceForAllYears()
+    }
 }

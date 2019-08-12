@@ -33,8 +33,29 @@ METHOD : GET
 URL : /api/mandatory/institutes
 
 
-###### 년도별 각 금융기관의 지원금액 합계를 출력하는 API (출력 데이터 샘플 형식에 오류(json format 이 잘못됨)가 있어서 약간 변경)
+###### 년도별 각 금융기관의 지원금액 합계를 출력하는 API
+
+COMMENT : 출력 데이터 샘플 형식에 오류(json format 이 잘못됨)가 있어서 약간 변경하였음. json은 key-value 의 객체 형식이어야 함 (또는 단독 배열 형태). 객체 형태 안에 key-value 형식과 단독 배열 형식이 공존 할 수 없음  
+METHOD : GET  
+URL : /api/mandatory/finance/by-year  
+
+
+###### 각 년도별 각 기관의 전체 지원금액 중에서 가장 큰 금액의 기관명을 출력하는 API
 
 METHOD : GET  
-URL : /api/mandatory/finance/by-year
+URL : /api/mandatory/finance/most-for-all-years  
 
+
+###### 전체 년도(2005~2017)에서 외환은행의 지원금액 평균 중에서 가장 작은 금액과 큰 금액을 출력하는 API
+
+COMMENT :  문제지에는 2005~2016년까지로 나오지만 오류라고 생각하고 구현. 아마 17년에 외환은행의 값이 0이어서 그렇게 쓴듯  
+METHOD : GET  
+URL : /api/mandatory/finance/bnk8/most-n-least
+
+
+#### Optional
+
+###### 특정 은행의 특정 달에 대해서 2018 년도 해당 달에 금융지원 금액을 예측하는 API
+
+METHOD : POST  
+URL : /api/mandatory/finance/expectation

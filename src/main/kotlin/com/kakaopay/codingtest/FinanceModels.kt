@@ -14,3 +14,13 @@ data class FinanceInfoByYear (
         @JsonProperty("detail_amount")
         val detailAmount: Map<String, Int>
 )
+
+data class MostFinanceForAllYears (
+        val year: Int,
+        val bank: String
+)
+
+data class MostFinanceForAYear (
+        val code: String,
+        val amount: Int
+)

@@ -91,4 +91,37 @@ class FinanceService(
         }
         return detailAmount
     }
+
+    fun getMostFinanceForAllYears(): MostFinanceForAllYears {
+        val all = financeDataRepository.findAll()
+
+        var maxYear = 0
+        var maxBankCode = ""
+        var maxAmount = 0
+        all.groupBy { it.year }.mapValues { entry ->
+            val mf = findMostFinanceForAYear(entry.value)
+            if (mf.amount > maxAmount) {
+                maxYear = entry.key
+                maxBankCode = mf.code
+                maxAmount = mf.amount
+            }
+        }
+
+        return MostFinanceForAllYears(maxYear, instituteCodeToName(maxBankCode))
+    }
+
+    private fun findMostFinanceForAYear(dataList: List<FinanceData>): MostFinanceForAYear {
+        var maxBankCode = ""
+        var maxAmount = 0
+
+        dataList.groupBy { it.code }.forEach { (code, list) ->
+            val sum = list.sumBy { it.amount }
+            if (sum > maxAmount) {
+                maxAmount = sum
+                maxBankCode = code
+            }
+        }
+
+        return MostFinanceForAYear(maxBankCode, maxAmount)
+    }
 }

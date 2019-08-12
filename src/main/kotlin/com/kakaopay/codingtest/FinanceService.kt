@@ -64,5 +64,6 @@ class FinanceService(
 
     private fun clearAllData() {
         instituteRepository.deleteAll()
+        financeDataRepository.deleteAll()
     }
 }

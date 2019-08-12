@@ -46,9 +46,9 @@ METHOD : GET
 URL : /api/mandatory/finance/most-for-all-years  
 
 
-###### 전체 년도(2005~2017)에서 외환은행의 지원금액 평균 중에서 가장 작은 금액과 큰 금액을 출력하는 API
+###### 전체 년도(2005~2016)에서 외환은행의 지원금액 평균 중에서 가장 작은 금액과 큰 금액을 출력하는 API
 
-COMMENT :  문제지에는 2005~2016년까지로 나오지만 오류라고 생각하고 구현. 아마 17년에 외환은행의 값이 0이어서 그렇게 쓴듯  
+COMMENT : 데이터는에는 2005~2016년까지 있지만 아마 17년에 외환은행의 값이 0이어서 2016년으로 쓴 듯  
 METHOD : GET  
 URL : /api/mandatory/finance/bnk8/most-n-least
 

@@ -24,3 +24,14 @@ data class MostFinanceForAYear (
         val code: String,
         val amount: Int
 )
+
+data class MostAndLeast (
+        val bank: String,
+        @JsonProperty("support_amount")
+        val supportAmount: List<AmountOfYear>
+)
+
+data class AmountOfYear (
+        val year: Int,
+        val amount: Int
+)

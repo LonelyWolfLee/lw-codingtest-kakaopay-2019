@@ -32,4 +32,10 @@ class FinanceController(
     fun mostFinanceForAllYears(): MostFinanceForAllYears {
         return service.getMostFinanceForAllYears()
     }
+
+    @GetMapping("mandatory/finance/bnk8/most-n-least")
+    fun getMostAndLeastOf(): MostAndLeast {
+        val instituteCode = "bnk8"
+        return service.getMostAndLeastOf(instituteCode)
+    }
 }

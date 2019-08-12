@@ -3,6 +3,8 @@ package com.kakaopay.codingtest
 import org.springframework.stereotype.Service
 import java.io.File
 import java.nio.charset.Charset
+import kotlin.math.round
+import kotlin.math.roundToInt
 
 @Service
 class FinanceService(
@@ -123,5 +125,36 @@ class FinanceService(
         }
 
         return MostFinanceForAYear(maxBankCode, maxAmount)
+    }
+
+    fun getMostAndLeastOf(instituteCode: String): MostAndLeast {
+        val fdMap = financeDataRepository.findAllByCode(instituteCode)
+                .groupBy { it.year }
+                .filter{entry ->
+                    entry.key != 2017
+                }
+
+
+        var minYear = 0
+        var minAmount = Int.MAX_VALUE
+        var maxYear = 0
+        var maxAmount = 0
+
+
+        fdMap.forEach { (year, list) ->
+            val avg = (list.sumBy { it.amount } / 12.00).roundToInt()
+            if (avg < minAmount) {
+                minAmount = avg
+                minYear = year
+            }
+            if (avg > maxAmount) {
+                maxAmount = avg
+                maxYear = year
+            }
+        }
+
+        return MostAndLeast(
+                instituteCodeToName(instituteCode),
+                arrayListOf(AmountOfYear(minYear, minAmount), AmountOfYear(maxYear, maxAmount)))
     }
 }

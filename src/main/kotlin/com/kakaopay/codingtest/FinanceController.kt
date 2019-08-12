@@ -17,4 +17,9 @@ class FinanceController(
         val charsetName = if (os.toLowerCase().contains("mac")) "cp949" else "utf8"
         return if(service.loadData(charsetName)) "success" else "fail"
     }
+
+    @GetMapping("mandatory/institutes")
+    fun institutes(): List<String> {
+        return service.getInstitutes()
+    }
 }

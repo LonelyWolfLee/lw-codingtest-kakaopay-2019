@@ -21,7 +21,13 @@ http://localhost:8080/swagger-ui.html
 
 ###### 1. 데이터 파일에서 각 레코드를 데이터베이스에 저장하는 API 개발
 
-METHOD : POST
+METHOD : POST  
 URL : /api/mandatory/load-data
+
+
+###### 2. 주택금융 공급 금융기관(은행) 목록을 출력하는 API 를 개발
+
+METHOD : GET  
+URL : /api/mandatory/institutes
 
 

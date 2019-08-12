@@ -66,4 +66,9 @@ class FinanceService(
         instituteRepository.deleteAll()
         financeDataRepository.deleteAll()
     }
+
+    fun getInstitutes(): List<String> {
+        return instituteRepository.findAll().map{ it.name }
+
+    }
 }

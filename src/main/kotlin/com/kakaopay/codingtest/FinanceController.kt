@@ -22,4 +22,9 @@ class FinanceController(
     fun institutes(): List<String> {
         return service.getInstitutes()
     }
+
+    @GetMapping("mandatory/finance/by-year")
+    fun allFinanceInfoByYear(): AllFinanceInfoByYear {
+        return service.getAllFinanceInfoByYear()
+    }
 }

@@ -71,4 +71,24 @@ class FinanceService(
         return instituteRepository.findAll().map{ it.name }
 
     }
+
+    fun getAllFinanceInfoByYear(): AllFinanceInfoByYear {
+        val all = financeDataRepository.findAll()
+
+        val infoListByYear = arrayListOf<FinanceInfoByYear>()
+        all.groupBy { it.year }.forEach { (year, dataList) ->
+            val detailAmount = getDetailAmount(dataList)
+            infoListByYear.add(FinanceInfoByYear(year, detailAmount.values.sum(), detailAmount))
+        }
+
+        return AllFinanceInfoByYear("주택금융 공급현황", infoListByYear)
+    }
+
+    private fun getDetailAmount(dataList: List<FinanceData>): Map<String, Int> {
+        val detailAmount = hashMapOf<String, Int>()
+        dataList.groupBy { it.code }.forEach { (code, list) ->
+            detailAmount[instituteCodeToName(code)] = list.sumBy { it.amount }
+        }
+        return detailAmount
+    }
 }

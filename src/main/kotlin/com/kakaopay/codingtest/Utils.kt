@@ -2,7 +2,7 @@ package com.kakaopay.codingtest
 
 import java.lang.RuntimeException
 
-fun bankCodeToName(code: String): String = when(code) {
+fun instituteCodeToName(code: String): String = when(code) {
     "bnk1" -> "주택도시기금"
     "bnk2" -> "국민은행"
     "bnk3" -> "우리은행"
@@ -12,10 +12,10 @@ fun bankCodeToName(code: String): String = when(code) {
     "bnk7" -> "농협은행/수협은행"
     "bnk8" -> "외환은행"
     "bnk9" -> "기타은행"
-    else -> throw InvalidBankException("No bank exist (code=$code)")
+    else -> throw InvalidBankException("No institute exist (code=$code)")
 }
 
-fun findBankCodeForName(name: String): String = with(name) {
+fun findInstituteCodeForName(name: String): String = with(name) {
     when {
         contains("주택도시기금") -> "bnk1"
         contains("국민은행") -> "bnk2"
@@ -26,7 +26,7 @@ fun findBankCodeForName(name: String): String = with(name) {
         contains("농협은행/수협은행") -> "bnk7"
         contains("외환은행") -> "bnk8"
         contains("기타은행") -> "bnk9"
-        else -> throw InvalidBankException("No bank code (name=$name)")
+        else -> throw InvalidBankException("No institute code (name=$name)")
     }
 }
 

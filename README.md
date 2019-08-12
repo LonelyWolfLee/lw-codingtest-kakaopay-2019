@@ -17,7 +17,9 @@
 
 http://localhost:8080/swagger-ui.html
 
-## Mandatory
+## API
+
+#### Mandatory
 
 ###### 1. 데이터 파일에서 각 레코드를 데이터베이스에 저장하는 API 개발
 

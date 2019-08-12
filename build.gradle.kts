@@ -31,7 +31,11 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("com.h2database:h2")
     annotationProcessor("org.projectlombok:lombok")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude(module = "junit")
+    }
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks.withType<KotlinCompile> {

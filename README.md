@@ -19,7 +19,7 @@
 
 ## API Document with Swagger2
 
-DESCRIPTION : API 테스트를 자체적으로 조금 더 쉽게 하기 위해 Swagger 2 기반의 Swagger UI 를 적용 하였다.
+DESCRIPTION : API 테스트를 자체적으로 조금 더 쉽게 하기 위해 Swagger 2 기반의 Swagger UI 를 적용 하였다.  
 URL : http://localhost:8080/swagger-ui.html
 
 

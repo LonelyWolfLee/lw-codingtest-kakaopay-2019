@@ -25,7 +25,7 @@ URL : http://localhost:8080/swagger-ui.html
 
 ## Authorization API
 
-#### JWT 기반 토큰을 발행하고 user_id, password, token 기반으로 관리한다. 토큰 만료 시간은 1시간이다.
+##### JWT 기반 토큰을 발행하고 user_id, password, token 기반으로 관리한다. 토큰 만료 시간은 1시간이다.
 
 ###### signup
 
@@ -44,7 +44,7 @@ URL : /api/auth/refresh
 
 ## Finance API
 
-###### 모든 Finance API 는 Authorize header 를 포함해야 한다. (Bearer Token)
+##### 모든 Finance API 는 Authorize header 를 포함해야 한다. (Bearer Token)
 
 #### Mandatory
 

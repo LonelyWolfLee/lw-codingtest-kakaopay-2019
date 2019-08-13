@@ -3,7 +3,6 @@ package com.kakaopay.codingtest
 import org.springframework.stereotype.Service
 import java.io.File
 import java.nio.charset.Charset
-import kotlin.math.round
 import kotlin.math.roundToInt
 
 @Service
@@ -71,7 +70,6 @@ class FinanceService(
 
     fun getInstitutes(): List<String> {
         return instituteRepository.findAll().map{ it.name }
-
     }
 
     fun getAllFinanceInfoByYear(): AllFinanceInfoByYear {

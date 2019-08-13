@@ -40,6 +40,12 @@ dependencies {
     // Swagger
     compile("io.springfox:springfox-swagger2:2.9.2")
     compile("io.springfox:springfox-swagger-ui:2.9.2")
+
+    // JWT
+    compile("io.jsonwebtoken:jjwt:0.9.1")
+
+    // Kotlin logging
+    compile("io.github.microutils:kotlin-logging:1.6.24")
 }
 
 tasks.withType<KotlinCompile> {

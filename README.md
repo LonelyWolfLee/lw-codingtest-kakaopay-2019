@@ -14,7 +14,7 @@
 * DB : H2 (connection url : http://localhost:8080/console)
 * How To Run : 
 ```gradle
-    gradlew bootRun
+    ./gradlew bootRun
 ``` 
 
 ## API Document with Swagger2

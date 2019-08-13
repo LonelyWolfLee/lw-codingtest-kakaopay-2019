@@ -32,9 +32,19 @@ URL : http://localhost:8080/swagger-ui.html
 METHOD : POST
 URL : /api/auth/signup
 
+###### signin
 
+METHOD : POST
+URL : /api/auth/signin
+
+###### refresh
+
+METHOD : POST
+URL : /api/auth/refresh
 
 ## Finance API
+
+###### 모든 Finance API 는 Authorize header 를 포함해야 한다. (Bearer Token)
 
 #### Mandatory
 

@@ -11,15 +11,30 @@
 
 * Framework : Spring Boot 2.1.7
 * Language : Kotlin
-* DB : H2 (url : http://localhost:8080/console)
+* DB : H2 (connection url : http://localhost:8080/console)
+* How To Run : 
+```gradle
+    gradlew bootRun
+``` 
 
+## API Document with Swagger2
 
-## For API Test in UI
-
-DESCRIPTION : API 테스트를 자체적으로 조금 더 쉽게 하기 위해 Swagger 2 기반의 Swagger UI 를 적용 하였음
+DESCRIPTION : API 테스트를 자체적으로 조금 더 쉽게 하기 위해 Swagger 2 기반의 Swagger UI 를 적용 하였다.
 URL : http://localhost:8080/swagger-ui.html
 
-## API
+
+## Authorization API
+
+#### JWT 기반 토큰을 발행하고 user_id, password, token 기반으로 관리한다. 토큰 만료 시간은 1시간이다.
+
+###### signup
+
+METHOD : POST
+URL : /api/auth/signup
+
+
+
+## Finance API
 
 #### Mandatory
 

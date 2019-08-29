@@ -23,6 +23,15 @@ DESCRIPTION : API 테스트를 자체적으로 조금 더 쉽게 하기 위해 S
 URL : http://localhost:8080/swagger-ui.html
 
 
+## 남은 내용
+
+* Integration Test
+* Unit Test
+* Api Test
+* 선택 과제
+* 각 API 별 접근 전략 기술
+
+
 ## Authorization API
 
 ##### JWT 기반 토큰을 발행하고 user_id, password, token 기반으로 관리한다. 토큰 만료 시간은 1시간이다.
